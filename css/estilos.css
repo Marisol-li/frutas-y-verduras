@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title {
+    text-align: center;
+    margin-top: 0;
+}
+
+.underline {
+    background-color: #FFB6C1; /* Rosa pastel */
+    height: 10px;
+    width: 100%;
+    margin-top: -10px; /* Ajustar para estar justo debajo del título */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 20px;
+}
+
+.left, .right {
+    width: 48%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ff4495;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #FFB6C1;
+}
+
+button {
+    border-radius: 50%;
+    margin: 2px;
+    padding: 5px;
+    cursor: pointer;background-color: #FFB6C1;
+    border-color: #ff4495;
+    color: #ff4495;
+    
+}
+
+.summary {
+    color: #ff4495;
+    margin-top: 20px;
+    text-align: right;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group {
+    color: #ff4495;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+h3, .add-button {
+    text-align: center;
+}

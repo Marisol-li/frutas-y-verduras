@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Almacén de Frutas y Verduras</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="./css/estilos.css">
+</head>
+<body>
+    <div id="app">
+        <h1 class="title">Almacén de Frutas y Verduras</h1>
+        <div class="underline"></div>
+        <div class="container">
+            <div class="left">
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="4">Frutas: {{ fruits.length }}</th>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(fruit, index) in fruits" :key="index">
+                            <td>
+                                <button @click="decrementQuantity(index)">-</button>
+                                {{ fruit.quantity }}
+                                <button @click="incrementQuantity(index)">+</button>
+                            </td>
+                            <td>{{ fruit.name }}</td>
+                            <td>{{ fruit.price }}</td>
+                            <td>{{ fruit.quantity * fruit.price }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="summary">
+                    <p>Subtotal: {{ subtotal }}</p>
+                    <p>IVA: {{ iva }}</p>
+                    <p>Total: {{ total }}</p>
+                </div>
+            </div>
+            <div class="right">
+                <h2>Registrar Frutas</h2>
+                <div class="form-group">
+                    <h3>Nombre</h3>
+                    <input type="text" v-model="newFruit.name" placeholder="Nombre">
+                </div>
+                <div class="form-group">
+                    <h3>Cantidad</h3>
+                    <input type="number" v-model="newFruit.quantity" placeholder="Cantidad">
+                </div>
+                <div class="form-group">
+                    <h3>Precio</h3>
+                    <input type="number" v-model="newFruit.price" placeholder="Precio">
+                </div>
+                <button @click="addFruit">Agregar</button>
+            </div>
+        </div>
+    </div>
+    <script src="./js/script.js"></script>
+</body>
+</html>
